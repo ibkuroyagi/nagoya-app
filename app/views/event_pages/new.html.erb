@@ -1,0 +1,36 @@
+<h2>イベントの登録</h2>
+<div class="container">
+    <%= form_for(@event, url: event_pages_path) do |f| %>
+    <div class="col-md-2"></div>
+		<div class="col-md-8">
+            <div class="field">
+                <%= f.label :name,"イベント名" %><br />
+                <%= f.text_field :name %>
+            </div>
+            <div class="field">
+                <%= f.label :date ,"開催日時"%><br />
+                <%= f.text_field :date, autofocus: true, autocomplete: "2019年10月3日　18~20時" %>
+            </div>
+            <div class="field">
+                <%= f.label :locate,"開催場所" %><br />
+                <%= f.text_field :locate %>
+            </div>
+            <div class="field">
+                <%= f.label :price,"参加費" %><br />
+                <%= f.number_field :price, autofocus: true, autocomplete: "1000" %>円
+            </div>
+            <div class="field">
+                <%= f.label :detail,"詳細" %><br />
+                <%= f.text_area :detail %>
+            </div>
+            <div class="field">
+                <%= f.label :rink,"リンク" %><br />
+                <%= f.text_field :rink, autofocus: true, autocomplete: "https://example.com" %>
+            </div>
+            <br/>
+            <div class="actions">
+                <%= f.submit "登録する" ,class: 'btn btn-primary ' %>
+            </div>
+        </div>
+    <% end %>
+</div>

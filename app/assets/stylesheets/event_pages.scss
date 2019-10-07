@@ -1,0 +1,44 @@
+// Place all the styles related to the EventPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* event page index' css */
+
+.new_event_page_button {
+    float: left;
+    margin-right: 10px;
+    font-size: 1.2em;
+    color: green;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    padding-top: 9px;
+    font-weight: bold;
+}
+
+.event_list {
+    width: 80%;
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.event_box {
+    border: solid 2px grey;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.align_center {
+    text-align: center;
+    font-weight: 500;
+    word-wrap: break-word;
+}

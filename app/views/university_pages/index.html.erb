@@ -1,0 +1,17 @@
+<div class="container">
+	<h2 style="text-align: center;">大学一覧</h2>
+	<div><%= link_to "大学を追加する",new_university_page_path, class: "btn btn-lg btn-primary" %></div>
+    <hr>
+		<div class="university_list">
+		<% @universities.each do |u| %>
+			<div class="university_box">
+				<div class="row">
+					<div class="col-sm-2 col-md-4">
+						<div class="align_center"><%= u.name %></div>
+					</div>
+				</div>
+			</div>
+		<% end %>
+        </div>
+	</div>
+</div>

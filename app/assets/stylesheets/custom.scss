@@ -1,0 +1,98 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* universal */
+
+body {
+    padding-top: 60px;
+}
+
+section {
+    overflow: auto;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.center {
+    text-align: center;
+}
+
+.center h1 {
+    margin-bottom: 10px;
+}
+
+
+/* typography */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1;
+}
+
+h1 {
+    font-size: 3em;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.2em;
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: normal;
+    color: #777;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.7em;
+}
+
+.pyramid_parent {
+    text-align: center;
+    /* 子要素を左右中央揃えにする */
+}
+
+.title_box {
+    font-size: 1.2em;
+    font-weight: bolder;
+    width: 30%;
+    /* 幅指定 */
+    display: inline-block;
+    /* インラインブロック要素にする */
+    margin-bottom: 0em;
+    /* 要素同士の隙間調整 */
+    padding: 0.2em;
+    /* 余白指定 */
+    box-sizing: border-box;
+    /* 崩れ防止 */
+}
+
+.content_box {
+    width: 60%;
+    /* 幅指定 */
+    display: inline-block;
+    /* インラインブロック要素にする */
+    margin-bottom: 0em;
+    /* 要素同士の隙間調整 */
+    padding: 0.2em;
+    /* 余白指定 */
+    box-sizing: border-box;
+    /* 崩れ防止 */
+    word-wrap: break-word;
+}
+
+.bottom_rink {
+    text-align: right;
+    /* 子要素を右央揃えにする */
+    font-size: 0.85em;
+    word-wrap: break-word;
+}

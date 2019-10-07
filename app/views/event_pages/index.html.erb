@@ -1,0 +1,49 @@
+<div class="container">
+	<h2 style="text-align: center;">イベント一覧</h2>
+	<div><%= link_to "イベントを投稿する",new_event_page_path,class: "btn btn-lg btn-primary" %></div>
+    <hr>
+		<div class="event_list">
+		<% @events.each do |e| %>
+			<div class="event_box">
+				<div class="row">
+					<div class="col-sm-2 col-md-2">
+						<!--div class="align_center">< e.team.name ></div-->
+					</div>
+                    
+					<div class="col-sm-8 col-md-8">
+                        <p class="pyramid_parent">
+                            <p class="title_box">イベント名</p>
+							<p class="content_box"><%= e.name %></p>
+                        </p>
+                        <p class="pyramid_parent">
+                            <p class="title_box">開催日時</p>
+							<p class="content_box"><%= e.date %></p>
+                        </p>
+                        <p class="pyramid_parent">
+                            <p class="title_box">開催場所</p>
+							<p class="content_box"><%= e.locate %></p>
+                        </p>
+                        <p class="pyramid_parent">
+                            <p class="title_box">参加費</p>
+                            <p class="content_box"><%= "#{e.price}円" %></p>
+                        </p>
+                        <p class="pyramid_parent">
+                            <p class="title_box">内容</p>
+                            <p class="content_box"><%= e.detail %></p>
+                        </p>
+                        <p class="pyramid_parent">
+                            <p class="title_box">詳細リンク</p>
+                            <p　class="content_box"><%= link_to e.rink,target: :_blank %></p>
+                        </p>
+                            <p class="bottom_rink"><%= link_to("サークルの詳細ページへ", event_page_path(e.id)) %></p>
+                        
+					</div>
+					<div class="col-sm-2 col-md-2">
+						<div style="margin-bottom: 10px;"><%= e.created_at.strftime("%Y年%-m月%-d日") %></div>
+					</div>
+				</div>
+			</div>
+		<% end %>
+        </div>
+	</div>
+</div>

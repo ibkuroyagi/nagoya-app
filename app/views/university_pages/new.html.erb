@@ -1,0 +1,13 @@
+<h2>大学の登録</h2>
+<div class="container">
+    <%= form_for(@university, url: university_pages_path) do |f| %>
+        <div class="field">
+            <%= f.label :name,"大学名" %><br />
+            <%= f.text_field :name, autofocus: true, autocomplete: "○○大学" %>
+        </div>
+        <br/>
+        <div>
+            <%= f.submit "登録する" ,class: 'btn btn-primary btn-block'%>
+        </div>
+    <% end %>
+</div>
