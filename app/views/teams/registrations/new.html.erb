@@ -1,29 +1,55 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
+<h2>新規登録</h2>
+<div class="container">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="col-md-2"></div>
+		<div class="col-md-8">
+      <div class="field">
+        <%= f.label :name,"団体名" %><br />
+        <%= f.text_field :name %>
+      </div>
+      <div class="field">
+        <%= f.label :email,"メールアドレス" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+      <div class="field">
+        <%= f.label :password,"パスワード" %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+      <div class="field">
+        <%= f.label :password_confirmation,"パスワードの確認" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+      <div class="field">
+        <%= f.label :volume ,"人数"%><br />
+        およそ<%= f.number_field :volume, autofocus: true, autocomplete: "20" %>人
+      </div>
+      <div class="field">
+        <%= f.label :date ,"活動日時"%><br />
+        <%= f.text_field :date, autofocus: true, autocomplete: "2019年10月3日　18~20時" %>
+      </div>
+      <div class="field">
+        <%= f.label :prace,"活動場所" %><br />
+        <%= f.text_field :prace %>
+      </div>
+      <div class="field">
+        <%= f.label :content,"活動内容" %><br />
+        <%= f.text_area :content %>
+      </div>
+      <div class="field">
+        <%= f.label :rink,"リンク" %><br />
+        <%= f.text_field :rink, autofocus: true, autocomplete: "https://example.com" %>
+      </div>
+      <div class="field">
+        <%= f.label :free,"自由記入欄" %><br />
+        <%= f.text_area :free %>
+      </div>
+      <div class="actions">
+        <%= f.submit "登録",class: 'btn btn-primary ' %>
+      </div>
+    <% end %>
+</div>
 <%= render "teams/shared/links" %>
