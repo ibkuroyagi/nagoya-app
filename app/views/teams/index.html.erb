@@ -1,6 +1,6 @@
 <div class="container">
 	<h2 style="text-align: center;">団体一覧</h2>
-	<div><%= link_to "新規に団体を登録する",new_event_page_path,class: "btn btn-lg btn-primary" %></div>
+	<div><%= link_to "新規に団体を登録する",new_team_registration_path,class: "btn btn-lg btn-primary" %></div>
     <hr>
 		<div class="event_list">
 		<% @teams.each do |t| %>
@@ -39,11 +39,19 @@
                             <p class="title_box">詳細リンク</p>
                             <p　class="content_box"><%= link_to t.rink, target: :_blank %></p>
                         </p>
-                            <p class="bottom_rink"><%= link_to("サークルの詳細ページへ", event_page_path(e.id)) %></p>
+                        <p class="pyramid_parent">
+                            <p class="title_box">参加大学</p>
+                            <p　class="content_box col-xs-3 col-lg-2 university_tag">
+                                <% t.universities.each do |university| %>
+		                        <%= university.name %>
+	                            <% end %>
+                            </p>
+                        </p>
+                            <p class="bottom_rink"><%= link_to("サークルの詳細ページへ", event_page_path(t.id)) %></p>
                         
 					</div>
 					<div class="col-sm-2 col-md-2">
-						<div style="margin-bottom: 10px;"><%= e.created_at.strftime("%Y年%-m月%-d日") %></div>
+						<!--div style="margin-bottom: 10px;"><= e.created_at.strftime("%Y年%-m月%-d日") ></div-->
 					</div>
 				</div>
 			</div>

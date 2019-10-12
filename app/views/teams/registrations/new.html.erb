@@ -47,8 +47,26 @@
         <%= f.label :free,"自由記入欄" %><br />
         <%= f.text_area :free %>
       </div>
+      <%#= f.fields_for :team_universities do |al| %><!-- ここから子レコードteam_universitiesに入力する内容 -->
+      <!--以下１：他の子モデルteam_universityへ入力する内容 -->
+      <%= f.fields_for :team_university, resource.team_universities || TeamUniversity.new do |al| %><!--teamモデルに送るform_forとは別にteam_universityに送るフォームを作成。resource(team)の子team_univesityを１対他で作成 -->
+        <div class="form-group">
+          <%= al.label :参加大学 %>
+          < al.select :university_id, [["東京", 1], ["千葉", 2],["神奈川", 3]] ,class:"form-control" >
+          <%= al.collection_check_boxes(:university, University.all, :id, :name, include_hidden: false) do |b| %>
+              <%= b.label { b.check_box + b.text } %>
+          <% end %>
+          <%#= al.collection_select :prefectures_master,PrefecturesMaster.all, :id, :pref_name ,class:"form-control" %>
+        </div>
+      <% end %><!-- ここまでが子レコードteam_universitiesに入力する内容 -->
+      <!--div>
+        <h2>参加大学(複数選択可)</h2>
+          <%= f.collection_check_boxes(:universities, University.all, :id, :name, include_hidden: false) do |b| %>
+            <%= b.label { b.check_box + b.text } %>
+          <% end %>
+      </div-->
       <div class="actions">
-        <%= f.submit "登録",class: 'btn btn-primary ' %>
+       <%= f.submit "登録",class: 'btn btn-primary ' %>
       </div>
     <% end %>
 </div>
