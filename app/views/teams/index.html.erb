@@ -42,8 +42,8 @@
                         <p class="pyramid_parent">
                             <p class="title_box">参加大学</p>
                             <p　class="content_box col-xs-3 col-lg-2 university_tag">
-                                <% t.universities.each do |university| %>
-		                        <%= university.name %>
+                                <% t.team_universities.each do |tu| %>
+		                            <%= @universities.find(tu.university_id).name %>
 	                            <% end %>
                             </p>
                         </p>

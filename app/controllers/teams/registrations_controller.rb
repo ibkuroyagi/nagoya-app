@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class Teams::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
+  before_action :configure_sign_up_params, only: [:create]
+  before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
   # def new
@@ -38,35 +38,33 @@ class Teams::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  protected
+  # protected
 
-  # If you have extra params to permit, append them to the sanitizer.
-  def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up) do |params|
-      #ユーザー（入力者）が新規登録をするとき変更できるのは、sign_up(deviseのデフォルト設定のカラム、emailやpasswordなど)に加え、追加した独自カラムnicknameとsexのみ変更を許可
-      #加えて子モデルaddress_listのprefectures_master_idカラムのみ変更を許可
-      params.permit(:sign_up, keys: [:name,:date,:prace,:content,:rink,:free,:volume, team_university_attributes: [:university_id]])
-    en
-    # devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
-  end
+  # # If you have extra params to permit, append them to the sanitizer.
+  # def configure_sign_up_params
+  #   devise_parameter_sanitizer.permit(:sign_up) do |params|
+  #     #ユーザー（入力者）が新規登録をするとき変更できるのは、sign_up(deviseのデフォルト設定のカラム、emailやpasswordなど)に加え、追加した独自カラムnicknameとsexのみ変更を許可
+  #     #加えて子モデルaddress_listのprefectures_master_idカラムのみ変更を許可
+  #     params.permit(:sign_up, keys: [:name,:date,:prace,:content,:rink,:free,:volume, team_university_attributes: [:university_id]])
+  #   end
+  # end
 
-  # If you have extra params to permit, append them to the sanitizer.
-  def configure_account_update_params
-        #accepts_nested_attributes_for（親から子を作成保存するときに使うメソッド）を使いdeviseのデフォルト挙動をカスタマイズしたい場合は、ブロックを渡す
-    devise_parameter_sanitizer.permit(:account_update) do |params|
-      #渡したブロックをカスタマイズ
-      #ユーザー（入力者）が編集更新をするとき変更できるのは、account_update(deviseのデフォルト設定のカラム、emailやpasswordなど)に加え、追加した独自カラムnicknameとsexのみ変更を許可、
-      #加えて子モデルaddress_listのprefectures_master_idカラムのみ変更を許可
-      params.permit(:account_update, keys: [:name,:date,:prace,:content,:rink,:free,:volume, team_university_attributes: [:university_id]])
-    end
-    # devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
-  end
+  # # If you have extra params to permit, append them to the sanitizer.
+  # def configure_account_update_params
+  #       #accepts_nested_attributes_for（親から子を作成保存するときに使うメソッド）を使いdeviseのデフォルト挙動をカスタマイズしたい場合は、ブロックを渡す
+  #   devise_parameter_sanitizer.permit(:account_update) do |params|
+  #     #渡したブロックをカスタマイズ
+  #     #ユーザー（入力者）が編集更新をするとき変更できるのは、account_update(deviseのデフォルト設定のカラム、emailやpasswordなど)に加え、追加した独自カラムnicknameとsexのみ変更を許可、
+  #     #加えて子モデルaddress_listのprefectures_master_idカラムのみ変更を許可
+  #     params.permit(:account_update, keys: [:name,:date,:prace,:content,:rink,:free,:volume, team_university_attributes: [:university_id]])
+  #   end
+  # end
 
-  # The path used after sign up.
-  def after_sign_up_path_for(resource)
-    teams_index_path
-    super(resource)
-  end
+  # # The path used after sign up.
+  # def after_sign_up_path_for(resource)
+  #   teams_index_path
+  #   super(resource)
+  # end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
