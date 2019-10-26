@@ -114,7 +114,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
       :user_name => "app150876408@heroku.com",
-  　　 :password => "f3i00isu4110",
+      :password => "f3i00isu4110",
       :domain => "heroku.com",
       :address => "smtp.sendgrid.net",
       :port => 587,
