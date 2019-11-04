@@ -6,7 +6,7 @@
 			<div class="event_box">
 				<div class="row">
 					<div class="col-sm-2 col-md-2">
-						<div class="align_center">< @event.team.name ></div>
+						<div class="align_center"><%= @event.team.name %></div>
 					</div>
 					<div class="col-sm-8 col-md-8">
                         <p class="pyramid_parent">
@@ -38,9 +38,11 @@
 						<div style="margin-bottom: 10px;"><%= @event.created_at.strftime("%Y年%-m月%-d日") %></div>
 					</div>
 				</div>
-                <p ><%=link_to "編集する",edit_event_page_path(@event), class: 'btn btn-primary' %></p>
-                <br/>
-                <p ><%=link_to "削除する",event_page_path(@event) ,method: :delete, class: 'btn btn-primary' %></p>
+                <% if ensure_correct_team %>
+                    <p ><%=link_to "編集する",edit_event_page_path(@event), class: 'btn btn-primary' %></p>
+                    <br/>
+                    <p ><%=link_to "削除する",event_page_path(@event) ,method: :delete, class: 'btn btn-primary' %></p>
+                <% end %>
 			</div>
         </div>
 	</div>

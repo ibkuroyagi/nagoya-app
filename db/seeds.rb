@@ -10,7 +10,7 @@ Team.create!(:name => 'ユーザー2', :email => '2a@gmail.com', :password => 22
 Team.create(:name => 'ユーザー3', :email => '3a@gmail.com', :password => 333333,date: "毎週木曜日午後7時〜8時", prace:"緑地公園",volume: 303,content:"テニスをしています。",rink: "http://ibuki-study.net",free:"自由に詳細を記入してください！")
 Team.create(:name => 'ユーザー4', :email => '4a@gmail.com', :password => 444444,date: "毎週木曜日午後5時〜9時", prace:"庄地公園",volume: 10,content:"楽しくテニスをしています",rink: "http://ibuki-study.net",free:"自由に詳細を記入してください！")
 Team.create(:name => 'ユーザー5', :email => '5a@gmail.com', :password => 555555,date: "毎週h曜日午後5時〜8時", prace:"内緑公園",volume: 5,content:"楽しくテニスをしています。",rink: "http://ibuki-study.net",free:"自由に詳細を記入してください！")
-Team.create(:name => 'ユーザー6', :email => '6a@gmail.com', :password => 666666,date: "毎週i曜日午後5時〜8時", prace:"地公園",volume: 30,content:"楽しくテニスをしています。aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",rink: "http://ibuki-study.net",free:"自由に詳細を記入してください！")
+Team.create(:name => 'ユーザー6', :email => '6a@gmail.com', :password => 666666,date: "毎週i曜日午後5時〜8時", prace:"地公園",volume: 30,content:"楽しくテニスをしています。aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",rink: "http://ibuki-study.net",free:"自由に詳細を記入してください！")
 Team.create(:name => 'ユーザー7', :email => '7a@gmail.com', :password => 777777,date: "毎週j曜日午後5時〜8時", prace:"庄公園",volume: 50,content:"楽しくテニスをしています。",rink: "http://ibuki-study.net",free:"自由に詳細を記入してください！")
 Team.create(:name => 'ユーザー8', :email => '8a@gmail.com', :password => 888888,date: "毎週k曜日午後5時〜8時", prace:"緑公園",volume: 2,content:"楽しくテニスをしています。",rink: "http://ibuki-study.net",free:"自由に詳細を記入してください！")
 

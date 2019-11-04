@@ -1,4 +1,8 @@
 class EventPagesController < ApplicationController
+  before_action :authenticate_team!, only: [:new,:create,:edit,:update,:destroy]
+  before_action :ensure_correct_team, only: [:edit,:update,:destroy]
+  helper_method :ensure_correct_team
+
   def index
     @events = Event.all
   end
@@ -9,6 +13,7 @@ class EventPagesController < ApplicationController
   
   def create
     @event = Event.new(event_params)
+    @event.team_id = current_team.id 
     if @event.save
       redirect_to event_page_path(@event)
     else
@@ -38,6 +43,18 @@ class EventPagesController < ApplicationController
     redirect_to event_pages_path
   end
 
+  def ensure_correct_team
+    #binding.pry
+    @event = Event.find_by(id: params[:id])
+    if @event.team_id != current_team.id
+      flash[:notice] = "権限がありません"
+      #redirect_to(event_pages_path)
+      return false
+    else
+      return true
+    end
+  end
+  
   private
 
     def event_params
@@ -51,4 +68,5 @@ class EventPagesController < ApplicationController
         :team_id
         )
     end
+
 end

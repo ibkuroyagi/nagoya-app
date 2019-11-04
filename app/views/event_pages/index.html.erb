@@ -1,13 +1,17 @@
 <div class="container">
 	<h2 style="text-align: center;">イベント一覧</h2>
-	<div><%= link_to "イベントを投稿する",new_event_page_path,class: "btn btn-lg btn-primary" %></div>
+    <% if team_signed_in? %>
+	    <div><%= link_to "イベントを投稿する",new_event_page_path,class: "btn btn-lg btn-primary" %></div>
+    <% end %>
     <hr>
 		<div class="event_list">
 		<% @events.each do |e| %>
 			<div class="event_box">
 				<div class="row">
 					<div class="col-sm-2 col-md-2">
-						<!--div class="align_center">< e.team.name ></div-->
+                        <p class="pyramid_parent">
+							<p class="content_box"><%= e.team.name %></p>
+                        </p>
 					</div>
                     
 					<div class="col-sm-8 col-md-8">
