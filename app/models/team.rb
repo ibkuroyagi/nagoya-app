@@ -13,5 +13,9 @@ class Team < ApplicationRecord
   validates :volume, presence: true
   validates :content, length: { maximum: 500 },presence: true 
   validates :free, length: {maximum: 500}
-
+    # override Devise::Models::Confirmable#send_on_create_confirmation_instructions
+  def send_on_create_confirmation_instructions
+    generate_confirmation_token!  unless @raw_confirmation_token
+    send_devise_notification(:confirmation_on_create_instructions, @raw_confirmation_token, {})
+  end
 end
