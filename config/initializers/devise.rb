@@ -21,8 +21,8 @@ Devise.setup do |config|
   config.mailer_sender = '"nagoya-app" <service@example.com>'
 
   # Configure the class responsible to send e-mails.
-  # config.mailer = 'Devise::Mailer'
-  config.mailer = 'TeamMailer'
+  config.mailer = 'Devise::Mailer'
+  # config.mailer = 'TeamMailer'
   # Configure the parent class responsible to send e-mails.
   # config.parent_mailer = 'ActionMailer::Base'
 
