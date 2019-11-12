@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'teams/index'
-  get 'teams/show'
-  root to: 'event_pages#index' 
+  # get 'teams/index'
+  # get 'teams/show'
+  root 'event_pages#index' 
 
   # get 'university_pages/index'
   # get 'university_pages/new'
