@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 %W[A大 B大 C大 D大 E大 F大].each { |a| University.create(name: a) }
 
 Team.create!(:name => 'ユーザー１', :email => '1a@gmail.com', :password => 111111,date: "毎週木曜日午後5時〜8時", prace:"庄内緑地公園",volume: 30,content:"楽しくテニスをしています。",rink: "http://ibuki-study.net",free:"自由に詳細を記入してください！")
