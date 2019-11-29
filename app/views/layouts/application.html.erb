@@ -16,12 +16,12 @@
       ログインユーザー： <%= current_team.email %>
       <%= link_to 'アカウント変更', edit_team_registration_path %>
       <%= link_to "ログアウト", destroy_team_session_path %>
-      <%= link_to "団体一覧", teams_index_path %>
+      <%= link_to "団体一覧", teams_path %>
     <% else %>
       <%= link_to "TOP画面", root_path %>
       <%= link_to "新規作成", new_team_registration_path %>
       <%= link_to "ログイン", new_team_session_path %>
-      <%= link_to "団体一覧", teams_index_path %>
+      <%= link_to "団体一覧", teams_path %>
     <% end %>
     <%= yield %>
   </body>
