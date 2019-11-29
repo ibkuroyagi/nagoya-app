@@ -1,2 +1,46 @@
-<h1>Teams#show</h1>
-<p>Find me in app/views/teams/show.html.erb</p>
+<div class="container">
+	<h2 style="text-align: center;">団体詳細</h2>
+	<div><%= link_to "サークル一覧に戻る",teams_path, class: "btn btn-primary" %></div>
+    <hr>
+		<div class="event_list">
+			<div class="event_box">
+				<div class="row">
+					<div class="col-sm-8 col-md-8">
+                        <p class="pyramid_parent">
+                            <p class="title_box">団体名</p>
+							<p class="content_box"><%= @team.name %></p>
+                        </p>
+                        <p class="pyramid_parent">
+                            <p class="title_box">活動日時</p>
+							<p class="content_box"><%= @team.date %></p>
+                        </p>
+                        <p class="pyramid_parent">
+                            <p class="title_box">活動場所</p>
+							<p class="content_box"><%= @team.prace %></p>
+                        </p>
+                        <p class="pyramid_parent">
+                            <p class="title_box">参加人数</p>
+                            <p class="content_box"><%= "約#{@team.volume}名" %></p>
+                        </p>
+                        <p class="pyramid_parent">
+                            <p class="title_box">内容</p>
+                            <p class="content_box"><%= @team.content %></p>
+                        </p>
+                        <p class="pyramid_parent">
+                            <p class="title_box">詳細リンク</p>
+                            <p　class="content_box"><%= link_to @team.rink,target: :_blank %></p>
+                        </p>
+					</div>
+					<div class="col-sm-2 col-md-2">
+						<div style="margin-bottom: 10px;"><%= @team.created_at.strftime("%Y年%-m月%-d日") %></div>
+					</div>
+				</div>
+                <% if ensure_correct_team %>
+                    <p ><%=link_to "編集 / 削除する",edit_team_registration_path(@team), class: 'btn btn-primary' %></p>
+                    <br/>
+                    <!--p ><%=link_to "削除する",team_registration_path(@team) ,method: :delete, class: 'btn btn-primary' %></p-->
+                <% end %>
+			</div>
+        </div>
+	</div>
+</div>

@@ -6,8 +6,14 @@
 		<% @universities.each do |u| %>
 			<div class="university_box">
 				<div class="row">
-					<div class="col-sm-2 col-md-4">
-						<div class="align_center"><%= u.name %></div>
+					<div class="col-sm-6 col-md-6">
+						<p class="pyramid_parent">
+                            <p class="title_box"><%= u.name %></p>
+                            <p　class="content_box"><%= link_to "編集", edit_university_page_path(u.id),class: "btn-primary" %></p>
+							<% if can_destroy?(u.id) %>
+								<p　class="content_box"><%= link_to "削除", university_page_path(u.id), method: :delete ,class: "btn-primary" %></p>
+							<% end %>
+                        </p>
 					</div>
 				</div>
 			</div>

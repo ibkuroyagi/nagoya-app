@@ -1,4 +1,5 @@
 class UniversityPagesController < ApplicationController
+  helper_method :can_destroy?
   def index
     @universities = University.all
   end
@@ -16,6 +17,40 @@ class UniversityPagesController < ApplicationController
       redirect_to　new_university_page_path
     end
   end
+
+  def edit
+    @university = University.find(params[:id])
+  end
+
+  def update
+    @university = University.find(params[:id])
+    @university.update(university_params)
+    redirect_to university_pages_path
+  end
+
+  def show
+    @university = University.find(params[:id])
+  end
+
+
+  def destroy
+    @university = University.find(params[:id])
+    @university.delete
+    redirect_to university_pages_path
+  end
+
+  def can_destroy?(id)
+    # binding.pry
+    @team_universities = TeamUniversity.all 
+    
+    @team_universities.each do |t|
+      if t.university_id == id 
+        return false
+      end
+    end
+    return true
+  end
+
   private
 
     def university_params

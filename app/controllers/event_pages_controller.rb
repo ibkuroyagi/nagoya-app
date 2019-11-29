@@ -46,8 +46,10 @@ class EventPagesController < ApplicationController
   def ensure_correct_team
     #binding.pry
     @event = Event.find_by(id: params[:id])
-    if @event.team_id != current_team.id
-      flash[:notice] = "権限がありません"
+    if team_signed_in? == false
+      return false
+    elsif @event.team_id != current_team.id
+      # flash[:notice] = "編集可能なサークルのアカウントとしてログインしていません"
       #redirect_to(event_pages_path)
       return false
     else

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :teams, :only => [:index, :show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :event_pages 
-  resources :university_pages, only: [:new, :index, :create,:update ]
+  resources :university_pages#, only: [:new, :index, :create,:update, :edit, :destroy ]
 
   # Rails.application.routes.draw do
   # get 'teams/index'
