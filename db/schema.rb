@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_29_170508) do
+ActiveRecord::Schema.define(version: 2019_12_02_041526) do
 
   create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2019_09_29_170508) do
     t.text "free"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "admin_flg"
     t.index ["confirmation_token"], name: "index_teams_on_confirmation_token", unique: true
     t.index ["email"], name: "index_teams_on_email", unique: true
     t.index ["reset_password_token"], name: "index_teams_on_reset_password_token", unique: true

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  # get 'teams/index'
-  # get 'teams/show'
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'event_pages#index' 
 
   devise_for :teams
@@ -14,9 +13,6 @@ Rails.application.routes.draw do
   resources :event_pages 
   resources :university_pages#, only: [:new, :index, :create,:update, :edit, :destroy ]
 
-  # Rails.application.routes.draw do
-  # get 'teams/index'
-  # get 'teams/show'
   #   devise_for :users, controllers: {
   #     sessions: 'users/sessions'
   #   }

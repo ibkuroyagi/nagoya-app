@@ -12,9 +12,9 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <% if team_signed_in? %>
-      ログインユーザー： <%= current_team.email %>
-      <%= link_to 'アカウント変更', edit_team_registration_path %>
+    <p><% if team_signed_in? %>
+      ログインユーザー： <%= current_team.name %></p>
+      <!--%= link_to 'アカウント変更', edit_team_registration_path %-->
       <%= link_to "ログアウト", destroy_team_session_path %>
       <%= link_to "団体一覧", teams_path %>
     <% else %>
