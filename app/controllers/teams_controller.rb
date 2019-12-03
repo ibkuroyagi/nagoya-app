@@ -3,8 +3,13 @@ class TeamsController < ApplicationController
 
   def index
     @q = Team.ransack(params[:q])
-    @teams = @q.result(distinct: true).includes(:universities)
-    # @teams = Team.all
+    if @q
+      @teams = @q.result(distinct: true).includes(:universities)
+    else
+      #binding.pry
+      @teams = Team.all
+    end
+    # binding.pry
     # @qq = University.ransack(params[:q])
     # @universities = @qq.result(distinct: true)
     @universities = University.all

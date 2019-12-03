@@ -5,6 +5,9 @@ class EventPagesController < ApplicationController
 
   def index
     @events = Event.all
+    # @q = Event.ransack(params[:q])
+    # @events = @q.result(distinct: true).includes(:teams)
+    @universities = University.all
   end
 
   def new
