@@ -1,6 +1,6 @@
 <div class="container">
 	<h2 style="text-align: center;">団体詳細</h2>
-	<div><%= link_to "サークル一覧に戻る",teams_path, class: "btn btn-primary" %></div>
+	<div><%= link_to "団体一覧に戻る",teams_path, class: "btn btn-primary" %></div>
     <hr>
 		<div class="event_list">
 			<div class="event_box">
@@ -42,5 +42,48 @@
                 <% end %>
 			</div>
         </div>
+        <br>
+        <hr>
+        <% unless @team.events.blank? %>
+            <h2><%= "#{@team.name}主催のイベント" %></h2>
+            <div class="event_list">
+                <% @team.events.each do |e| %>
+                    <div class="event_box">
+                        <div class="row">
+                            <div class="col-sm-8 col-md-8">
+                                <p class="pyramid_parent">
+                                    <p class="title_box">イベント名</p>
+                                    <p class="content_box"><%= e.name %></p>
+                                </p>
+                                <p class="pyramid_parent">
+                                    <p class="title_box">開催日時</p>
+                                    <p class="content_box"><%= e.date %></p>
+                                </p>
+                                <p class="pyramid_parent">
+                                    <p class="title_box">開催場所</p>
+                                    <p class="content_box"><%= e.locate %></p>
+                                </p>
+                                <p class="pyramid_parent">
+                                    <p class="title_box">参加費</p>
+                                    <p class="content_box"><%= "#{e.price}円" %></p>
+                                </p>
+                                <p class="pyramid_parent">
+                                    <p class="title_box">内容</p>
+                                    <p class="content_box"><%= e.detail %></p>
+                                </p>
+                                <p class="pyramid_parent">
+                                    <p class="title_box">詳細リンク</p>
+                                    <p　class="content_box"><%= link_to("#{e.rink}",e.rink,:target => "_blank")  %></p>
+                                </p>
+                                    <p class="bottom_rink"><%= link_to("団体の詳細ページへ", event_page_path(e.id)) %></p>
+                            </div>
+                            <div class="col-sm-2 col-md-2">
+                                <div style="margin-bottom: 10px;"><%= e.created_at.strftime("%Y年%-m月%-d日") %></div>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        <% end %>
 	</div>
 </div>
