@@ -3,20 +3,24 @@
     <%= link_to "nagoya app", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <p class="login_user"><% if team_signed_in? %>ログインユーザー：<%= current_team.name %></p>
+        <p class="login_user">
+        <% if team_signed_in? %>ログインユーザー：<%= current_team.name %>
+        </p>
             <!--%= link_to 'アカウント変更', edit_team_registration_path %-->
-            <%= link_to "イベント一覧", root_path ,id:"head_btn"%>
             <%= link_to "ログアウト", destroy_team_session_path ,id:"head_btn"%>
+            <%= link_to "イベント一覧", root_path ,id:"head_btn"%>
             <%= link_to "団体一覧", teams_path,id:"head_btn" %>
             <% if current_team.admin_flg == true %>
+                <%= link_to "大学一覧", university_pages_path ,id:"head_btn"%>
                 <%= link_to "管理者画面", rails_admin_path ,id:"head_btn"%>
             <% end %>
-            <% else %>
-            <%= link_to "イベント一覧", root_path ,id:"head_btn"%>
-            <%= link_to "団体の新規作成", new_team_registration_path ,id:"head_btn"%>
+        <% else %>
             <%= link_to "ログイン", new_team_session_path ,id:"head_btn"%>
+            <%= link_to "イベント一覧", root_path ,id:"head_btn"%>
+            
             <%= link_to "団体一覧", teams_path ,id:"head_btn"%>
-            <% end %>
+            <%= link_to "団体の新規作成", new_team_registration_path ,id:"head_btn"%>
+        <% end %>
       </ul>
     </nav>
   </div>

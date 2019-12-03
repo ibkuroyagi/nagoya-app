@@ -55,7 +55,7 @@ class EventPagesController < ApplicationController
     if team_signed_in? == false
       return false
     elsif @event.team_id != current_team.id
-      flash.now[:notice] = "編集は自アカウントのみ可能です"
+      flash.now[:notice] = "イベント編集は自アカウントのみ可能です"
       #redirect_to(event_pages_path)
       return false
     else
