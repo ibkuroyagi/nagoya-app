@@ -2,6 +2,20 @@
 	<h2 style="text-align: center;">団体一覧</h2>
 	<div><%= link_to "新規に団体を登録する",new_team_registration_path,class: "btn btn-lg btn-primary" %></div>
     <hr>
+    <h3>表示する団体を条件で絞る</h3>
+    <%= search_form_for @q do |f| %>
+        <p><%= f.label :name, "団体名" %>
+        <%= f.search_field :name_cont %></p>
+        <p><%= f.label :volume, "参加人数" %>
+        <%= f.number_field :volume_gteq %>人以上〜
+        <%= f.number_field :volume_lt %>人未満</p>
+        <p><%= f.label :universities, "大学" %>
+        <%#= f.check_box :universities_id_eq,"",{:checked => "checked"}%>
+        <% @universities.each do |u| %>
+		    <%= f.check_box :universities_id_eq_any, { multiple: true }, u.id ,checked:true %> <%= u.name %>
+	    <% end %></p>
+    <%= f.submit "検索" %>
+    <% end %>
 		<div class="event_list">
 		<% @teams.each do |t| %>
 			<div class="event_box">

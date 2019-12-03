@@ -2,7 +2,11 @@ class TeamsController < ApplicationController
   before_action :ensure_correct_team, only: [:edit,:update,:destroy]
 
   def index
-    @teams = Team.all
+    @q = Team.ransack(params[:q])
+    @teams = @q.result(distinct: true).includes(:universities)
+    # @teams = Team.all
+    # @qq = University.ransack(params[:q])
+    # @universities = @qq.result(distinct: true)
     @universities = University.all
   end
 
