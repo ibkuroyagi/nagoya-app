@@ -17,7 +17,9 @@ class EventPagesController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.team_id = current_team.id 
+    @team = current_team
     if @event.save
+      EventMailer.send_when_create_event(@event, @team).deliver
       redirect_to event_page_path(@event)
     else
       # もう一回newのパスに

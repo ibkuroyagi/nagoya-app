@@ -1,0 +1,17 @@
+
+===============================<br>
+<h2><%= @team.name %>様</h2>
+===============================<br>
+
+<div>こんにちは！ <%= @team.name %>さん</div>
+<p>新規登録したイベントの内容について確認してください。</p>
+<hr>
+<li>イベント名:<%= @event.name %></li>
+<li>開催日時:<%= @event.date %></li>
+<li>開催場所:<%= @event.locate %></li>
+<li>参加費:<%= "#{@event.price}円" %></li>
+<li>内容:<%= @event.detail %></li>
+<li>詳細リンク:<%= @event.rink %></li>
+<li>登録日時:<%= @event.created_at.strftime("%Y年%-m月%-d日") %></li>
+<br>
+以上
