@@ -12,8 +12,7 @@
                         <p class="pyramid_parent">
 							<p class="content_box"><%= e.team.name %></p>
                         </p>
-					</div>
-                    
+					</div>                   
 					<div class="col-sm-8 col-md-8">
                         <p class="pyramid_parent">
                             <p class="title_box">イベント名</p>
@@ -35,12 +34,18 @@
                             <p class="title_box">内容</p>
                             <p class="content_box"><%= e.detail %></p>
                         </p>
+                        <p class="title_box">参加大学</p>
+                            <p　class="content_box col-xs-3 col-lg-2 university_tag">
+                                <% e.team.team_universities.each do |tu| %>
+                                    <%= e.team.universities.find(tu.university_id).name %>
+                                <% end %>
+                            </p>
+                        </p>
                         <p class="pyramid_parent">
                             <p class="title_box">詳細リンク</p>
                             <p　class="content_box"><%= link_to("#{e.rink}",e.rink,:target => "_blank")  %></p>
                         </p>
-                            <p class="bottom_rink"><%= link_to("イベント詳細ページへ", event_page_path(e.id)) %></p>
-                        
+                            <p class="bottom_rink"><%= link_to("イベント詳細ページへ", event_page_path(e.id)) %></p>      
 					</div>
 					<div class="col-sm-2 col-md-2">
 						<div style="margin-bottom: 10px;"><%= e.created_at.strftime("%Y年%-m月%-d日") %></div>

@@ -25,6 +25,13 @@
                             <p class="title_box">参加費</p>
                             <p class="content_box"><%= "#{@event.price}円" %></p>
                         </p>
+                        <p class="title_box">参加大学</p>
+                            <p　class="content_box col-xs-3 col-lg-2 university_tag">
+                                <% @event.team.team_universities.each do |tu| %>
+                                    <%= @event.team.universities.find(tu.university_id).name %>
+                                <% end %>
+                            </p>
+                        </p>
                         <p class="pyramid_parent">
                             <p class="title_box">内容</p>
                             <p class="content_box"><%= @event.detail %></p>

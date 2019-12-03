@@ -17,7 +17,7 @@
       <!--%= link_to 'アカウント変更', edit_team_registration_path %-->
       <%= link_to "イベント一覧　", root_path %>
       <%= link_to "ログアウト　", destroy_team_session_path %>
-      <%= link_to "団体一覧", teams_path %>
+      <%= link_to "団体一覧　", teams_path %>
       <% if current_team.admin_flg == true %>
         <%= link_to "管理者画面", rails_admin_path %>
       <% end %>
