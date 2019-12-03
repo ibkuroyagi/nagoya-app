@@ -96,3 +96,39 @@ p {
     font-size: 0.85em;
     word-wrap: break-word;
 }
+
+#logo {
+    float: left;
+    margin-right: 10px;
+    font-size: 1.7em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    padding-top: 9px;
+    font-weight: bold;
+}
+
+#logo:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.login_user {
+    color: #fff;
+    font-size: 0.8em;
+    padding-top: 9px;
+}
+
+#head_btn {
+    float: right;
+    margin-left: 10px;
+    font-size: 0.8em;
+    color: #fff;
+    letter-spacing: -1px;
+    padding-top: 9px;
+    font-weight: bold;
+    &:hover {
+        color: #fff;
+        text-decoration: none;
+    }
+}

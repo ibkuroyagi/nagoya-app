@@ -20,6 +20,7 @@ class EventPagesController < ApplicationController
     @team = current_team
     if @event.save
       EventMailer.send_when_create_event(@event, @team).deliver
+      flash.now[:info] = '登録内容の確認メールを送信しました'
       redirect_to event_page_path(@event)
     else
       # もう一回newのパスに
@@ -54,7 +55,7 @@ class EventPagesController < ApplicationController
     if team_signed_in? == false
       return false
     elsif @event.team_id != current_team.id
-      # flash[:notice] = "編集可能なサークルのアカウントとしてログインしていません"
+      flash.now[:notice] = "編集は自アカウントのみ可能です"
       #redirect_to(event_pages_path)
       return false
     else
