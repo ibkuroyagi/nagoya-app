@@ -9,9 +9,13 @@
 					<div class="col-sm-6 col-md-6">
 						<p class="pyramid_parent">
                             <p class="title_box"><%= u.name %></p>
-                            <p　class="content_box"><%= link_to "編集", edit_university_page_path(u.id),class: "btn-primary" %></p>
-							<% if can_destroy?(u.id) %>
-								<p　class="content_box"><%= link_to "削除", university_page_path(u.id), method: :delete ,class: "btn-primary" %></p>
+							<% if team_signed_in? %>
+								<% if current_team.admin_flg %>
+									<p　class="content_box"><%= link_to "編集", edit_university_page_path(u.id),class: "btn-primary" %></p>
+									<% if can_destroy?(u.id) %>
+										<p　class="content_box"><%= link_to "削除", university_page_path(u.id), method: :delete ,class: "btn-primary" %></p>
+									<% end %>
+								<% end %>
 							<% end %>
                         </p>
 					</div>

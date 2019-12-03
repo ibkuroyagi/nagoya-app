@@ -1,16 +1,24 @@
-<h2>大学の修正</h2>
-<div class="container"> 
-<%= form_for(@university, url: university_page_path(@university)) do |f| %>
-    <div class="col-md-2"></div>
-		<div class="col-md-8">
-            <div class="field">
-                <%= f.label :name,"イベント名" %><br />
-                <%= f.text_field :name %>
-            </div>
-            <br/>
-            <div class="actions">
-                <%= f.submit "修正する" ,class: 'btn btn-primary ' %>
-            </div>
+<% if team_signed_in?%>
+    <% if current_team.admin_flg %>
+        <h2>大学の修正</h2>
+        <div class="container"> 
+        <%= form_for(@university, url: university_page_path(@university)) do |f| %>
+            <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="field">
+                        <%= f.label :name,"イベント名" %><br />
+                        <%= f.text_field :name %>
+                    </div>
+                    <br/>
+                    <div class="actions">
+                        <%= f.submit "修正する" ,class: 'btn btn-primary ' %>
+                    </div>
+                </div>
+            <% end %>
         </div>
-    <% end %>
-</div>
+    <%else%>
+        <h2>404 Page Not Found</h2>
+    <%end%>
+<%else%>
+    <h2>404 Page Not Found</h2>    
+<%end%>
