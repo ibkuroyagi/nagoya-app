@@ -21,4 +21,4 @@ rails t
 
 * Deployment instructions
 
-* ...
+* https://nagoya-app.herokuapp.com

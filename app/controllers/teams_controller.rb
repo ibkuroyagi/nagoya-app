@@ -3,6 +3,7 @@ class TeamsController < ApplicationController
 
   def index
     @q = Team.ransack(params[:q])
+    #binding.pry
     if @q
       @teams = @q.result(distinct: true).includes(:universities)
     else

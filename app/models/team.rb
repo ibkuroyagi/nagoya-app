@@ -19,3 +19,6 @@ class Team < ApplicationRecord
   #   send_devise_notification(:confirmation_on_create_instructions, @raw_confirmation_token, {})
   # end
 end
+
+
+
