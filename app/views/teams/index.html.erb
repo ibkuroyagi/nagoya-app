@@ -10,9 +10,9 @@
         <%= f.number_field :volume_gteq %>人以上〜
         <%= f.number_field :volume_lt %>人未満</p>
         <p><%= f.label :universities, "大学" %>
-        <%= f.check_box :universities_id_eq,"",{:checked => "checked"}%>
+        <%#= f.check_box :universities_id_eq,"",{:checked => "checked"}%>
         <% @universities.each do |u| %>
-		    <%= f.check_box :universities_id_eq_any, { multiple: true }, u.id ,checked: true %> <%#= u.name %>
+		    <%= f.check_box :universities_id_eq_any, { multiple: true }, u.id ,checked: true %> <%= u.name %>
 	    <% end %></p>
         <%# University.all.each do |u| %>
         <%#= check_box_tag('q[universities_id_eq_any][]', u.id,checked: true ) %>
