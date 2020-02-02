@@ -16,8 +16,8 @@ Team.create(:name => 'ユーザー5', :email => '5a@gmail.com', :password => 555
 Team.create(:name => 'ユーザー6', :email => '6a@gmail.com', :password => 666666,date: "毎週i曜日午後5時〜8時", prace:"地公園",volume: 30,content:"楽しくテニスをしています。aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",rink: "http://ibuki-study.net",free:"自由に詳細を記入してください！")
 Team.create(:name => 'ユーザー7', :email => '7a@gmail.com', :password => 777777,date: "毎週j曜日午後5時〜8時", prace:"庄公園",volume: 50,content:"楽しくテニスをしています。",rink: "http://ibuki-study.net",free:"自由に詳細を記入してください！")
 Team.create(:name => 'ユーザー8', :email => '8a@gmail.com', :password => 888888,date: "毎週k曜日午後5時〜8時", prace:"緑公園",volume: 2,content:"楽しくテニスをしています。",rink: "http://ibuki-study.net",free:"自由に詳細を記入してください！")
-Team.create(:name => 'ユーザーx', :email => 'busikuro@gmail.com', :password => 111111,date: "年中無休", prace:"名古屋",volume: 1,content:"サイトの管理をしています",rink: "http://ibuki-study.net",free:"自由に詳細を記入してください！",admin_flg: true)
-
+Team.create(:name => 'ユーザーx', :email => 'example@gmail.com', :password => 111111,date: "年中無休", prace:"名古屋",volume: 1,content:"サイトの管理をしています",rink: "http://ibuki-study.net",free:"自由に詳細を記入してください！",admin_flg: true)
+#exampleを自分のアドレスに
 
 TeamUniversity.create!(team_id: 1, university_id:1)
 TeamUniversity.create!(team_id: 1, university_id:2)

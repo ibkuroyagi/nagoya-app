@@ -16,7 +16,7 @@ Team.create(:name => 'ユーザー5', :email => '5a@gmail.com', :password => 555
 Team.create(:name => 'ユーザー6', :email => '6a@gmail.com', :password => 666666,date: "毎週i曜日午後5時〜8時", prace:"地公園",volume: 30,content:"楽しくテニスをしています。aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",rink: "http://ibuki-study.net",free:"自由に詳細を記入してください！")
 Team.create(:name => 'ユーザー7', :email => '7a@gmail.com', :password => 777777,date: "毎週j曜日午後5時〜8時", prace:"庄公園",volume: 50,content:"楽しくテニスをしています。",rink: "http://ibuki-study.net",free:"自由に詳細を記入してください！")
 Team.create(:name => 'ユーザー8', :email => '8a@gmail.com', :password => 888888,date: "毎週k曜日午後5時〜8時", prace:"緑公園",volume: 2,content:"楽しくテニスをしています。",rink: "http://ibuki-study.net",free:"自由に詳細を記入してください！")
-Team.create(:name => 'ユーザーx', :email => 'busikuro@gmail.com', :password => 111111,date: "年中無休", prace:"名古屋",volume: 1,content:"サイトの管理をしています",rink: "http://ibuki-study.net",free:"自由に詳細を記入してください！",admin_flg: true)
+Team.create(:name => 'ユーザーx', :email => 'example@gmail.com', :password => 111111,date: "年中無休", prace:"名古屋",volume: 1,content:"サイトの管理をしています",rink: "http://ibuki-study.net",free:"自由に詳細を記入してください！",admin_flg: true)
 
 
 TeamUniversity.create!(team_id: 11, university_id:11)
@@ -25,10 +25,10 @@ TeamUniversity.create(team_id: 21, university_id:11)
 TeamUniversity.create(team_id: 31, university_id:11)
 TeamUniversity.create(team_id: 21, university_id:31)
 
-Event.create(name: "a1",date: "毎週木曜日午後5時〜8時",price: 100,detail: '細かい内容は頑張る',rink: 'https://ibuki-study.net',locate:"名古屋大学" ,team_id: 11)
-Event.create(name: "a2",date: "木曜日午後5時〜8時",price: 200,detail: '細かい内容は頑張2',rink: 'https://ibuki-study.net',locate:"名古屋大学", team_id: 21)
+Event.create(name: "a1",date: "毎週木曜日午後5時〜8時",price: 100,detail: '細かい内容は頑張る',rink: 'https://ibuki-study.net',locate:"A大学" ,team_id: 11)
+Event.create(name: "a2",date: "木曜日午後5時〜8時",price: 200,detail: '細かい内容は頑張2',rink: 'https://ibuki-study.net',locate:"A大学", team_id: 21)
 Event.create(name: "a3",date: "毎週木曜日午後5時",price: 130,detail: 'かい内容は頑張る3aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',rink: 'https://ibuki-study.net', team_id: 11)
-Event.create(name: "a4",date: "毎週木曜日午後5時〜8時",price: 140,detail: '細かい内容は頑張る4',rink: 'https://ibuki-study.net',locate:"名古屋大学",  team_id: 11)
+Event.create(name: "a4",date: "毎週木曜日午後5時〜8時",price: 140,detail: '細かい内容は頑張る4',rink: 'https://ibuki-study.net',locate:"D大学",  team_id: 11)
 Event.create(name: "a5",date: "毎週木曜日午後5時〜8時",price: 500,detail: '細かい内容は頑張る5',rink: 'https://ibuki-study.net', team_id: 41)
 Event.create(name: "a6",date: "毎週木曜日午後5時〜8時",price: 600,detail: '細かい内容は頑張る6',rink: 'https://ibuki-study.net', team_id: 31)
 Event.create(name: "a7",date: "毎週木曜日午後5時〜8時",price: 0,detail: '細かい内容は頑張る7',rink: 'https://ibuki-study.net', team_id: 21)
